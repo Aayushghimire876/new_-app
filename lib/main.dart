@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:new_app/home.dart';
+import 'package:new_app/register.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: Homepage()
+      home: RegisterformUI()
     );
   }
 }
