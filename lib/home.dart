@@ -1,52 +1,96 @@
-import 'package:flutter/material.dart';
+import 'dart:nativewrappers/_internal/vm/lib/math_patch.dart';
 
-class Homepage extends StatefulWidget {
+import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+
+class Homepage extends StatelessWidget {
   const Homepage({super.key});
 
-  @override
-  State<Homepage> createState() => _HomepageState();
-}
-
-class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Homepage")),
-      body: Container(
-        padding: EdgeInsets.all(20),
-        margin: EdgeInsets.all(20),
-        decoration: BoxDecoration(color: Colors.grey[600]),
+      body: Center(
         child: Column(
+          mainAxisSize: MainAxisSize.min,
+          spacing: 10,
           children: [
-            Row(
-              spacing: 20,
-              children: [
-                CircleAvatar(radius: 35, child: Icon(Icons.person_outline)),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("Name: Ayush"),
-                    Text("Age:22"),
+            CircleAvatar(radius: 60, child: Icon(Icons.person, size: 60)),
+            Text(
+              "CodingLab",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+            Text(
+              "YouTuber & Blogger ",
+              style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+            ),
 
-                    Text("Address:Biratnagar"),
-                  ],
+            //media links here.....
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              spacing: 10,
+              children: [
+                CircleAvatar(
+                  radius: 20,
+                  child: Image.asset("assest/facebook-circle-logo.png"),
+                ),
+                CircleAvatar(
+                  radius: 20,
+                  child: Image.asset("assest/instagramlogo.png"),
+                ),
+                CircleAvatar(
+                  radius: 20,
+                  child: Image.asset("assest/twittericon.png"),
+                ),
+                CircleAvatar(
+                  radius: 20,
+                  child: Image.asset("assest/yticon.png"),
                 ),
               ],
             ),
-            Divider(thickness: 1.5, color: Colors.black),
 
             Row(
-              spacing: 5,
+              mainAxisAlignment: MainAxisAlignment.center,
+              spacing: 10,
               children: [
-                Icon(Icons.public_outlined),
-                Text("Https://www.google.com"),
+                ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+                  child: Text(
+                    "Subscribe",
+                    style: TextStyle(color: Colors.white, fontSize: 14),
+                  ),
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+                  child: Text(
+                    "Message",
+                    style: TextStyle(color: Colors.white, fontSize: 14),
+                  ),
+                ),
               ],
             ),
+
+            //like & share section here.....
             Row(
-              spacing: 5,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(Icons.mail_outline),
-                Text("aayushghimire2001@gmail.com"),
+                Row(children: [Icon(Icons.heart_broken), Text("60K")]),
+                SizedBox(
+                  height: 15,
+                  child: VerticalDivider(width: 18, color: Colors.grey),
+                ),
+                Row(children: [Icon(Icons.message), Text("50K")]),
+                SizedBox(
+                  height: 15,
+                  child: VerticalDivider(width: 18, color: Colors.grey),
+                ),
+                Row(children: [Icon(Icons.share), Text("20K")]),
+                SizedBox(
+                  height: 15,
+                  child: VerticalDivider(width: 18, color: Colors.grey),
+                ),
               ],
             ),
           ],
