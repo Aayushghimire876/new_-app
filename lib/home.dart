@@ -1,7 +1,4 @@
-import 'dart:nativewrappers/_internal/vm/lib/math_patch.dart';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({super.key});
@@ -9,7 +6,7 @@ class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Homepage")),
+      appBar: AppBar (title: Text("Homepage")),
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -36,7 +33,7 @@ class Homepage extends StatelessWidget {
                 ),
                 CircleAvatar(
                   radius: 20,
-                  child: Image.asset("assest/instagramlogo.png"),
+                  child: Image.asset("assest/instgramlogo.png"),
                 ),
                 CircleAvatar(
                   radius: 20,
