@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:new_app/constants/fruits_constants.dart';
+import 'package:new_app/fruits_detail_page.dart';
 import 'package:new_app/models/fruit_model.dart';
 
 class GridViewPage extends StatefulWidget {
@@ -67,24 +68,35 @@ class _GridViewPageState extends State<GridViewPage> {
               itemCount: fruitList.length,
               padding: EdgeInsets.all(20),
               itemBuilder: (context, index) {
-                return Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.grey[300],
-                  ),
-                  padding: EdgeInsets.all(5),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Image.asset(
-                        fruitList[index].imageUrl,
-                        height: 50,
-                        width: 50,
+                final fruit = fruitList[index];
+                return InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => FruitsDetailPage(fruit: fruit),
                       ),
-                      Text(fruitList[index].name),
-                      Text("Rs: ${fruitList[index].price}"),
-                    ],
+                    );
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.grey[300],
+                    ),
+                    padding: EdgeInsets.all(5),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Image.asset(
+                          fruitList[index].imageUrl,
+                          height: 50,
+                          width: 50,
+                        ),
+                        Text(fruitList[index].name),
+                        Text("Rs: ${fruitList[index].price}"),
+                      ],
+                    ),
                   ),
                 );
               },
