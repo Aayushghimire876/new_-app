@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:new_app/constants/fruits_constants.dart';
-import 'package:new_app/fruits_detail_page.dart';
+import 'package:new_app/views/fruits_detail_page.dart';
 import 'package:new_app/models/fruit_model.dart';
 
 class GridViewPage extends StatefulWidget {
