@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:new_app/main_nav_page.dart';
 import 'package:new_app/views/grid_view_page.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
